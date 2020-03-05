@@ -1,24 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iUv-AJ-lYB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--API-->
+        <scene sceneID="ia2-ZS-gnK">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="Eaj-y4-ZMB" customClass="APIViewController" customModule="Jokes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3cg-Sd-MyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnQ-NS-ULO">
+                                <rect key="frame" x="20" y="44" width="374" height="769"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vnQ-NS-ULO" firstAttribute="bottom" secondItem="v5V-Go-kcN" secondAttribute="bottom" id="4up-7e-F94"/>
+                            <constraint firstItem="vnQ-NS-ULO" firstAttribute="top" secondItem="v5V-Go-kcN" secondAttribute="top" id="OCG-Wl-Fem"/>
+                            <constraint firstItem="v5V-Go-kcN" firstAttribute="trailing" secondItem="vnQ-NS-ULO" secondAttribute="trailing" constant="20" id="aoX-bY-J3V"/>
+                            <constraint firstItem="vnQ-NS-ULO" firstAttribute="leading" secondItem="v5V-Go-kcN" secondAttribute="leading" constant="20" id="te9-0i-L9Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v5V-Go-kcN"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="API" selectedImage="doc.fill" catalog="system" id="Sve-ho-2p8"/>
+                    <connections>
+                        <outlet property="webView" destination="vnQ-NS-ULO" id="9cH-8c-nA2"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ThA-z5-yYk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-233.33333333333334" y="212.94642857142856"/>
+        </scene>
+        <!--Jokes-->
+        <scene sceneID="jLc-AQ-VVs">
+            <objects>
+                <viewController id="L6Z-vp-58h" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YU3-W9-RYy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eFh-0S-5bi"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Jokes" selectedImage="smiley.fill" catalog="system" id="LIP-4j-sT5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTM-Fd-EXH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="-435"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="M8d-Uh-net">
+            <objects>
+                <tabBarController id="iUv-AJ-lYB" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y41-Tg-YhS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="L6Z-vp-58h" kind="relationship" relationship="viewControllers" id="AZy-2H-sPA"/>
+                        <segue destination="Eaj-y4-ZMB" kind="relationship" relationship="viewControllers" id="3hl-04-snt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pch-1Z-xDn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1153" y="-112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="doc.fill" catalog="system" width="56" height="64"/>
+        <image name="smiley.fill" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
