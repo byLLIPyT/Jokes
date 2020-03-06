@@ -17,7 +17,6 @@
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnQ-NS-ULO">
                                 <rect key="frame" x="20" y="44" width="374" height="769"/>
-                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -42,22 +41,6 @@
             </objects>
             <point key="canvasLocation" x="-233.33333333333334" y="212.94642857142856"/>
         </scene>
-        <!--Jokes-->
-        <scene sceneID="jLc-AQ-VVs">
-            <objects>
-                <viewController id="L6Z-vp-58h" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YU3-W9-RYy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="eFh-0S-5bi"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Jokes" selectedImage="smiley.fill" catalog="system" id="LIP-4j-sT5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bTM-Fd-EXH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-232" y="-435"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="M8d-Uh-net">
             <objects>
@@ -68,13 +51,95 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="L6Z-vp-58h" kind="relationship" relationship="viewControllers" id="AZy-2H-sPA"/>
+                        <segue destination="j6L-Ge-zoj" kind="relationship" relationship="viewControllers" id="dbd-UP-YVN"/>
                         <segue destination="Eaj-y4-ZMB" kind="relationship" relationship="viewControllers" id="3hl-04-snt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pch-1Z-xDn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1153" y="-112"/>
+        </scene>
+        <!--Jokes-->
+        <scene sceneID="X89-Gj-hUF">
+            <objects>
+                <viewController id="j6L-Ge-zoj" customClass="JokesViewController" customModule="Jokes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ugb-io-Dwn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qDy-dB-XPU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="657"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="U4V-U4-VpJ" customClass="CellTableViewCell" customModule="Jokes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U4V-U4-VpJ" id="aKV-Ck-TAp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bo-5K-6ES">
+                                                    <rect key="frame" x="20" y="11" width="374" height="78"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelJoke" destination="1Bo-5K-6ES" id="mGU-4U-liC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="j6L-Ge-zoj" id="B7a-Uy-7qc"/>
+                                    <outlet property="delegate" destination="j6L-Ge-zoj" id="dbR-T9-ytM"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fC-Yp-USQ">
+                                <rect key="frame" x="174" y="763" width="66" height="30"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iHx-PC-iaS"/>
+                                    <constraint firstAttribute="width" constant="66" id="pw7-iN-ZNP"/>
+                                </constraints>
+                                <state key="normal" title="Load">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadJokes:" destination="j6L-Ge-zoj" eventType="touchUpInside" id="WKu-BJ-xEz"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ifi-s1-2IA">
+                                <rect key="frame" x="156" y="715" width="103" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ifi-s1-2IA" firstAttribute="leading" secondItem="hay-Rs-K2c" secondAttribute="leading" constant="156" id="7Cg-W1-9QK"/>
+                            <constraint firstItem="qDy-dB-XPU" firstAttribute="trailing" secondItem="hay-Rs-K2c" secondAttribute="trailing" id="H6u-Pg-a6d"/>
+                            <constraint firstItem="ifi-s1-2IA" firstAttribute="top" secondItem="qDy-dB-XPU" secondAttribute="bottom" constant="14" id="RHr-hc-snc"/>
+                            <constraint firstItem="9fC-Yp-USQ" firstAttribute="centerX" secondItem="hay-Rs-K2c" secondAttribute="centerX" id="UEU-E7-MnE"/>
+                            <constraint firstItem="qDy-dB-XPU" firstAttribute="leading" secondItem="hay-Rs-K2c" secondAttribute="leading" id="ecb-UB-Rdy"/>
+                            <constraint firstItem="hay-Rs-K2c" firstAttribute="trailing" secondItem="ifi-s1-2IA" secondAttribute="trailing" constant="155" id="l1a-Uq-1JN"/>
+                            <constraint firstItem="qDy-dB-XPU" firstAttribute="top" secondItem="hay-Rs-K2c" secondAttribute="top" id="p76-3E-M5Z"/>
+                            <constraint firstItem="hay-Rs-K2c" firstAttribute="bottom" secondItem="9fC-Yp-USQ" secondAttribute="bottom" constant="20" id="rIp-Dc-bX6"/>
+                            <constraint firstItem="9fC-Yp-USQ" firstAttribute="top" secondItem="ifi-s1-2IA" secondAttribute="bottom" constant="14" id="v7o-RP-Cqx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hay-Rs-K2c"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Jokes" selectedImage="smiley.fill" catalog="system" id="zt9-mQ-23B"/>
+                    <connections>
+                        <outlet property="countJokes" destination="ifi-s1-2IA" id="JyF-Np-ZCZ"/>
+                        <outlet property="tableView" destination="qDy-dB-XPU" id="AIB-iT-Idx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q73-p0-Wld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233.33333333333334" y="-445.3125"/>
         </scene>
     </scenes>
     <resources>

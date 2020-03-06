@@ -13,7 +13,7 @@ class APIViewController: UIViewController {
         
     @IBOutlet weak var webView: WKWebView!
     
-    private let mainUrl = "http://www.icndb.com/api/"
+    private let mainUrl = "http://www.icndb.com/api"    
     
     override func viewDidLoad() {
         super.viewDidLoad()
