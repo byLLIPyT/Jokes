@@ -14,24 +14,22 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var countJokes: UITextField!
     
     private var url = "http://api.icndb.com/jokes/random/"
-    
     private var jokes: [Value] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return jokes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = jokes[indexPath.row].joke
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CellTableViewCell
+        cell.labelJoke.text    = jokes[indexPath.row].joke
         return cell
     }
     
     @IBAction func downloadJokes(_ sender: Any) {
+        
         guard let strCount = countJokes.text else { return }
         guard let _ = Int(strCount) else { return }
         let newUrl = url + strCount
@@ -43,6 +41,7 @@ class JokesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func fetchData(url: String) {
+        
         guard let url = URL(string: url) else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             guard let data = data else { return }

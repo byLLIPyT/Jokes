@@ -43,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB3DFB2024128DDE00375E7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB3DFB182412606600375E7C /* Jokes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB3DFB2124128DF000375E7C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AB4D2EDA2411908000D45595 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		AB4D2EC82411908000D45595 = {
 			isa = PBXGroup;
 			children = (
@@ -62,11 +78,11 @@
 		AB4D2ED32411908000D45595 /* Jokes */ = {
 			isa = PBXGroup;
 			children = (
+				AB3DFB2124128DF000375E7C /* Storyboard */,
+				AB3DFB2024128DDE00375E7C /* Model */,
+				AB4D2EEC2411911300D45595 /* View */,
 				AB4D2ED42411908000D45595 /* AppDelegate.swift */,
 				AB4D2ED62411908000D45595 /* SceneDelegate.swift */,
-				AB4D2EDA2411908000D45595 /* Main.storyboard */,
-				AB3DFB182412606600375E7C /* Jokes.swift */,
-				AB4D2EEC2411911300D45595 /* View */,
 				AB4D2EDD2411908100D45595 /* Assets.xcassets */,
 				AB4D2EDF2411908100D45595 /* LaunchScreen.storyboard */,
 				AB4D2EE22411908100D45595 /* Info.plist */,
